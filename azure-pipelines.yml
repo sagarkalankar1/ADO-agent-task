@@ -39,8 +39,19 @@ steps:
         ls
         pwd
         
+  - task: Bash@3
+    displayName: 'Step 4: View Permissions of the Folder and File'
+    inputs:
+      targetType: 'inline'
+      script: |
+        # View permissions of the directory
+        ls -la /sagnew11/node/14.21.3/x64/
+
+        # View permissions of the specific file
+        ls -la /sagnew11/node/14.21.3/x64/CHANGELOG.md      
+
   - task: NodeTool@0
-    displayName: 'Step 4: Install Node.js'
+    displayName: 'Step 4.1: Install Node.js'
     inputs:
       versionSpec: '14.x'
       
