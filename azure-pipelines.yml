@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: Default
+pool: ADO-AGENT-POOL-POC2
 
 steps:
   - task: Bash@3
