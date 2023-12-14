@@ -15,7 +15,7 @@ steps:
       targetType: 'inline'
       script: |
         # Print the path to the tools directory
-        echo "Agent.ToolsDirectory: $(Agent.ToolsDirectory)"
+        echo "Agent.ToolsDirectory (1): $(Agent.ToolsDirectory)"
 
 
   - task: Bash@3
