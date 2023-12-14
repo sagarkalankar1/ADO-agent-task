@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: ADO-AGENT-POOL-POC2
+pool: VMSS-POC
 
 steps:
   - task: Bash@3
