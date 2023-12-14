@@ -39,11 +39,21 @@ steps:
         ls
         pwd
         
-  - task: NodeTool@0
+  # - task: NodeTool@0
+  #   displayName: 'Step 4: Install Node.js'
+  #   inputs:
+  #     versionSpec: '14.x'
+      
+  - task: Bash@3
     displayName: 'Step 4: Install Node.js'
     inputs:
-      versionSpec: '14.x'
-      
+      targetType: 'inline'
+      script: |
+        export NPM_CONFIG_PREFIX=$(Agent_ToolsDirectory)/node14
+        curl -L https://git.io/n-install | bash
+        source ~/.bashrc
+        n 14.x
+    
   - task: Bash@3
     displayName: 'Step 5: Navigate to /agent/_work/_tool and do ls'
     inputs:
@@ -78,6 +88,20 @@ steps:
 
         # List directory contents with detailed information including permissions
         ls -la        
+
+  - task: Bash@3
+    displayName: 'Step 7: List Permissions of the Directory'
+    inputs:
+      targetType: 'inline'
+      script: |
+        ls -la /sagnew11/node/14.21.3/x64/     
+
+  - task: Bash@3
+    displayName: 'Step 8: Modify Permissions of the Directory'
+    inputs:
+      targetType: 'inline'
+      script: |
+        chmod -R 755 /sagnew11/node/14.21.3/x64/ 
 
 
 
