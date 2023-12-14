@@ -49,10 +49,12 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        export NPM_CONFIG_PREFIX=$(Agent_ToolsDirectory)/node14
+        sudo apt-get install -y build-essential  # Install build-essential (includes make)
+        export NPM_CONFIG_PREFIX=$(Agent.ToolsDirectory)/node14
         curl -L https://git.io/n-install | bash
         source ~/.bashrc
         n 14.x
+
     
   - task: Bash@3
     displayName: 'Step 5: Navigate to /agent/_work/_tool and do ls'
