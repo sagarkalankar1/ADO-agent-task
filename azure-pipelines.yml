@@ -39,22 +39,20 @@ steps:
         ls
         pwd
         
-  # - task: NodeTool@0
-  #   displayName: 'Step 4: Install Node.js'
-  #   inputs:
-  #     versionSpec: '14.x'
-      
-  - task: Bash@3
+  - task: NodeTool@0
     displayName: 'Step 4: Install Node.js'
     inputs:
-      targetType: 'inline'
-      script: |
-        sudo apt-get update
-        sudo apt-get install -yq build-essential  # Install build-essential (includes make)
-        export NPM_CONFIG_PREFIX=$(Agent.ToolsDirectory)/node14
-        curl -L https://git.io/n-install | bash -s -- -n -q
-
-
+      versionSpec: '14.x'
+      
+  # - task: Bash@3
+  #   displayName: 'Step 4: Install Node.js'
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: |
+  #       sudo apt-get update
+  #       sudo apt-get install -yq build-essential  # Install build-essential (includes make)
+  #       export NPM_CONFIG_PREFIX=$(Agent.ToolsDirectory)/node14
+  #       curl -L https://git.io/n-install | bash -s -- -n -q
     
   - task: Bash@3
     displayName: 'Step 5: Navigate to /agent/_work/_tool and do ls'
