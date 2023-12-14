@@ -52,9 +52,8 @@ steps:
         sudo apt-get update
         sudo apt-get install -yq build-essential  # Install build-essential (includes make)
         export NPM_CONFIG_PREFIX=$(Agent.ToolsDirectory)/node14
-        curl -L https://git.io/n-install | bash
-        source ~/.bashrc
-        n 14.x
+        curl -L https://git.io/n-install | bash -s -- -n -q
+
 
     
   - task: Bash@3
