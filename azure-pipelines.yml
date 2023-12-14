@@ -96,12 +96,6 @@ steps:
       script: |
         ls -la /sagnew11/node/14.21.3/x64/     
 
-  - task: Bash@3
-    displayName: 'Step 8: Modify Permissions of the Directory'
-    inputs:
-      targetType: 'inline'
-      script: |
-        chmod -R 755 /sagnew11/node/14.21.3/x64/ 
 
 
 
