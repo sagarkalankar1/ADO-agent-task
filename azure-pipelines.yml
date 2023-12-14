@@ -57,6 +57,18 @@ steps:
         pwd
 
   - task: Bash@3
+    displayName: 'Step 6: Navigate to /sagnew11 and do ls'
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Navigate to the specified path
+        cd /sagnew11
+
+        # List the contents of the directory
+        ls      
+        pwd
+
+  - task: Bash@3
     displayName: 'Step 6: View Directory Permissions'
     inputs:
       targetType: 'inline'
